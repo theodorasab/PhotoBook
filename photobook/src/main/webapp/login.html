@@ -1,0 +1,82 @@
+<div class="container-fluid text-center s-login" id="loginbody">    
+    <div class="container" id="cont">
+      <h1 id="signup">Log In</h1><br>
+      <form>
+
+        <div class="form-row">
+          <div class="form-group col-md-2"></div>
+
+          <!-- Username -->
+          <div class="form-group col-md-4">
+            <input type="text" id="usernm" class="form-control" pattern="[a-zA-Z0-9]{8,}" required placeholder="Username *">
+          </div>
+
+          <!-- Password -->
+          <div class="form-group col-md-4">
+            <input type="password" class="form-control" id="pw1" pattern="(?=.*\d)(?=.*[\W_])(?=.*[a-zA-Z]).{8,10}" required placeholder="Password *">
+          </div>
+
+          <div class="form-group col-md-2"></div>
+        </div>
+
+        <div class="form-group">
+            Auto-Complete using Profile Picture?
+        </div>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+            <label class="form-check-label" for="exampleRadios1">
+              Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked>
+            <label class="form-check-label" for="exampleRadios2">
+              No
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-2"></div>
+          <div class="form-group col-md-8" id="map"></div>
+          <div class="form-group col-md-2"></div>
+        </div>
+
+        <!-- Camera -->
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <video id='video' width='190' height='190' autoplay></video>
+            <label id="vidNotSupported" style="display: none;">Camera not supported</label>
+          </div>
+          <div class="form-group col-md-4">
+            <canvas id='canvas' width='190' height='190'></canvas>
+          </div>
+          <div class="form-group col-md-4"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4"></div>
+          <div class="form-group col-md-4">
+            <button type="button" id="snap"  class="btn btn-info btn-sm">Take Photo</button>
+            <button type="button" id="takePfp" disabled class="btn btn-info btn-sm">Set Profile Picture</button>
+            <label id="upload" class="btn btn-info btn-sm">
+              Upload Image <input type="file" id="pfpfile" onchange="imageUploaded(event)" hidden accept="image/gif, image/jpeg, image/png">
+            </label>
+          </div>
+          <div class="form-group col-md-4"></div>
+        </div>
+
+        <div class="form-group">
+          <small class="text-center" id="pfpUpl"></small>
+        </div>
+
+        <input type="button" id="lgnBtn" value="Log In" class="btn btn-primary"></input>
+        <div class="form-group">
+          <small class="text-center" id="ajxres"></small>
+        </div>
+
+      </form>
+    </div>
+  </div>

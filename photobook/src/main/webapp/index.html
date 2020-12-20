@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PhotoBook</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="js/ajaxRequest.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/aes.min.js" integrity="sha512-eqbQu9UN8zs1GXYopZmnTFFtJxpZ03FHaBMoU3dwoKirgGRss9diYqVpecUgtqW2YRFkIVgkycGQV852cD46+w==" crossorigin="anonymous"></script>
+        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-full" style=" background: #6b4343;">
+            <a class="navbar-brand" href="#">PhotoBook</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto" id="nav">
+                    <li class="nav-item">
+                        <h6 class="nav-link" id="navmain" href="#">Main</h6>
+                    </li>
+                    <li class="nav-item">
+                        <h6 class="nav-link" id="navdashboard" href="#">Dashboard</h6>
+                    </li>
+                    <li class="nav-item">
+                        <h6 class="nav-link" id="navallusers">All Users</h6>
+                    </li>
+                    <li class="nav-item">
+                        <h6 class="nav-link" id="loggedinas"></h6>
+                    </li>
+                    <li class="nav-item">
+                        <h6 class="nav-link" id="navallonlineusers">Online Users</h6>
+                    </li>
+                    <li class="nav-item">
+                        <h6 class="nav-link" id="navfriends">Find Friends!</h6>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <ul class="navbar-nav mr-auto">
+
+                        <!-- Register -->
+                        <li class="nav-item">
+                            <input class="nav-link btn my-2 my-sm-0" value="Register" id="regbtn" type="button">
+                        </li>
+
+                        <!-- Login -->
+                        <li class="nav-item">
+                            <input class="nav-link btn my-2 my-sm-0" value="Login " id="lgnbtn" type="button">
+                        </li>
+
+                        <!-- Logout -->
+                        <li class="nav-item">
+                            <input class="nav-link btn my-2 my-sm-0" value="Logout " id="lgobtn" type="button">
+                        </li>
+
+                        <!-- Search form -->
+                        <!--<input class="form-control" type="text" id="searchbar" placeholder="Search Users" aria-label="Search">-->
+
+                        <div class="ui-widget">
+                            <label for="users"> </label>
+                            <input id="searchbar" class="form-control" type="text" placeholder="Search Users" aria-label="Search" />
+                        </div>
+                    </ul>
+                </form>
+            </div>
+        </nav>
+    </body>
+
+    <!-- Container to load context -->
+    <div class="container-fluid text-center" id="maincontainer"></div>
+
+    <!-- Global state -->
+    <script src="js/state.js"></script>
+
+    <!-- Scripts -->
+    <script src="js/time.js"></script>
+    <script src="js/passwordCheck.js"></script>
+    <script src="js/showMap.js"></script>
+    <script src="js/addressCheck.js"></script>
+    <script src="js/autoFillLoc.js"></script>
+    <script src="js/face++/face.js"></script>
+    <script src="js/face++/nameCheck.js"></script>
+    <script src="js/face++/imgUpload.js"></script>
+    <script src="js/deleteUser.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/users.js"></script>
+    <script src="js/createPost.js"></script>
+    <script src="js/rating.js"></script>
+    <script src="js/getUserPosts.js"></script>
+    <script src="js/comment.js"></script>
+    <script src="js/deletePost.js"></script>
+    <script src="js/sort.js"></script>
+    <script src="js/image.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/init.js"></script>
+    <script>
+        faceRec.init();
+        faceRecLog.init();
+    </script>
+</html>

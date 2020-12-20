@@ -1,0 +1,51 @@
+<div class="container-fluid text-center s-profile" id="profilebody"> 
+    <h1 id="profile" style="margin-top:19px" >Profile</h1><br>
+    <div class="UserName" id="Usernameprofile" style="font-size: 20px;color:#6b4343;font-weight: 700;text-decoration: overline solid rgb(68, 68, 68); margin-bottom:45px;" ></div>
+
+    <!-- <div class="input-group mb-3" style="width:50%; float:center; margin: 0 auto;">
+        <input style="height: 100px;" type="text" class="form-control" placeholder="Make a new post..." aria-label="Make a new post..." aria-describedby="basic-addon2" id="profilepostbody">
+        <div style="height: 100px; " class="input-group-append">
+            <button class="btn btn-outline-secondary" id="postbtn" type="button">Img</button>
+        </div>
+        <div style="height: 100px;" class="input-group-append">
+            <button class="btn btn-outline-secondary" id="profilepostbtn" type="button">Post</button>
+        </div>
+    </div> -->
+
+    <div class="input-group mb-3" style="width:50%; float:center; margin: 0 auto;">
+        <div style="height: 130px; width: 600px;">
+            <input style="height:100%;" type="text" class="form-control" placeholder="Make a new post..." aria-label="Make a new post..." aria-describedby="basic-addon2" id="profilepostbody">
+            <canvas id='postCanvas' width='30px' height='30%' style="float: left;"></canvas>
+        </div>
+        <div style="height: 130px; " class="input-group-append">
+            <button class="btn btn-outline-secondary" id="postimgbtn" type="button">Img</button>
+        </div>
+        <div style="height: 130px;" class="input-group-append">
+            <button class="btn btn-outline-secondary" id="profilepostbtn" type="button">Post</button>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <label id="piupload" style="width:5%; float:center; margin: 0 auto; display:inline;" class="btn btn-info btn-sm">
+             <input type="file" id="piupload" onchange="uploadPostImage(event)"accept="image/gif, image/jpeg, image/png">
+            </label>
+            <button type="button" id="pitake" class="btn btn-primary" style="width:5%; float:center; margin: 0 auto; display:inline;">Take</button>
+            <button type="button" id="pilink" class="btn btn-primary" style="width:5%; float:center; margin: 0 auto; display:inline;">Link</button>
+
+            <!-- LINK -->
+            <input type="text" style="width:25%; float:center; margin: 0 auto;" class="form-control" placeholder="Link an image..." aria-label="Make a new post..." aria-describedby="basic-addon2" id="imglnk">
+            <button type="button" id="imglnkbtn" class="btn btn-primary" style="width:5%; float:center; margin: 0 auto; display:inline;">Link</button>
+
+        </div>
+    
+    </div>
+
+    <ul class="list-group align-items-center" id="userposts">
+    </ul>
+  </div>
+  
